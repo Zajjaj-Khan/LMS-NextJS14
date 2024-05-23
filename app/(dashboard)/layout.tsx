@@ -1,8 +1,10 @@
 import React from "react";
 import SideBar from "./_components/SideBar";
 import Navbar from "./_components/Navbar";
-
+import { auth } from "@clerk/nextjs";
 const layout = ({ children }: { children: React.ReactNode }) => {
+  const {userId} = auth();
+  if(!userId) return;
   return <div className="h-full">
     <div className="h-[80px] md:pl-56 fixed inset-y-0 w-full z-50">
     <Navbar/>
