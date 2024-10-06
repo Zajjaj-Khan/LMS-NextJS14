@@ -24,7 +24,7 @@ export const ChaptersList = ({
 
     useEffect(()=>{
         setIsMounted(true)
-    })
+    },[isMounted])
 
     useEffect(()=>{
         setChapters(items)
