@@ -45,7 +45,7 @@ const CourseID = async ({ params }: { params: { courseId: string } }) => {
     },
   });
 
-  console.log(categories);
+
   const requiredFeilds = [
     course.title,
     course.description,
@@ -54,7 +54,6 @@ const CourseID = async ({ params }: { params: { courseId: string } }) => {
     course.categoryId,
     course.chapters.some((chapter)=> chapter.isPublished)
   ];
-  console.log(categories);
   const totalFields = requiredFeilds.length;
   const completedFields = requiredFeilds.filter(Boolean).length;
   const completionText = `(${completedFields}/${totalFields})`;
